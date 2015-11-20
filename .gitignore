@@ -1,0 +1,14 @@
+# Mac OS X
+.DS_Store
+
+# Node
+node_modules/
+*.log
+*.debug
+
+# Random stuff
+.idea
+*.iml
+
+# Project
+dist/

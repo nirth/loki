@@ -1,6 +1,6 @@
 {
-  "name": "vanaheim",
-  "version": "0.1.1",
+  "name": "loki",
+  "version": "0.1.2",
   "description": "Boilerplate for PIXI.js driven games with webpack and babel",
   "main": "index.js",
   "engines": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:nirth/vanaheim.git"
+    "url": "git@github.com:nirth/loki.git"
   },
   "scripts": {
     "clean": "rimraf dist",

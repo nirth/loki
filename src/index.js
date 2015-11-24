@@ -1,4 +1,4 @@
-import PIXI, {Graphics, Sprite} from './lib/pixi.min';
+import PIXI, {Graphics, Sprite} from './vendor/pixi.min';
 import './index.styl';
 import './assets/ship-sheet.jpg';
 import {info} from './lib/log';
@@ -32,6 +32,14 @@ const update = (previousState) => {
 
   if (commands.get('down')) {
     p = player.set('y', player.get('y') + 1);
+  }
+
+  if (commands.get('left')) {
+    p = player.set('x', player.get('x') - 1);
+  }
+
+  if (commands.get('right')) {
+    p = player.set('x', player.get('x') + 1);
   }
 
   return previousState.set('player', p);

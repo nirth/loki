@@ -12,6 +12,7 @@ import {createGameState} from './game/state/game';
 const controls = createControls();
 const commands = createCommands();
 const inputs = initializeInputs(controls, commands);
+const initialGameState = initialState(inputs);
 const gameState = createGameState(inputs);
 
 const {renderer, stage} = createStage();
@@ -22,7 +23,7 @@ const init = (stage, state) => {
 };
 
 const update = (previousState) => {
-  const {inputs, player} = previousState;
+  const {inputs, player, time} = previousState;
   const commands = inputs();
 
   let p = player;

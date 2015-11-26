@@ -1,4 +1,4 @@
-import PIXI, {Graphics, Sprite, Point} from '../../lib/pixi.min';
+import PIXI, {Graphics, Sprite, Point} from '../../vendor/pixi.min';
 import {PlayerState} from '../state/player';
 
 export const createPlayerSprite = () => {

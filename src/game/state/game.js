@@ -1,16 +1,9 @@
 import {Record} from 'immutable';
 import {PlayerState} from './player';
-import {createPlayerSprite} from '../drawing/player';
+import {TimeState} from './time';
 
-const GameState = Record({
+export const GameState = Record({
   inputs: null,
+  time: new TimeState(),
   player: null
 });
-
-export const createGameState = (inputs) => {
-  const player = new PlayerState({sprite: createPlayerSprite()});
-  return new GameState({
-    inputs: inputs,
-    player: player
-  });
-};

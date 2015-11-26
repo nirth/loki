@@ -2,7 +2,7 @@ import PIXI, {
   autoDetectRenderer,
   Container,
   Sprite
-} from './pixi.min';
+} from '../vendor/pixi.min';
 
 export const createStage = () => {
   const renderer = autoDetectRenderer(800, 600, { antialias: true });

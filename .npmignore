@@ -1,0 +1,8 @@
+src/
+gulpfile.babel.js
+.gitignore
+.eslintrc
+.eslintignore
+.babelrc
+circle.yml
+.travis.yml

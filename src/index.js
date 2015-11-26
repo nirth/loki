@@ -1,4 +1,4 @@
-import PIXI, {Graphics, Sprite} from './lib/pixi.min';
+import PIXI, {Graphics, Sprite} from './vendor/pixi.min';
 import './index.styl';
 import './assets/ship-sheet.jpg';
 import {info} from './lib/log';
@@ -12,6 +12,7 @@ import {createGameState} from './game/state/game';
 const controls = createControls();
 const commands = createCommands();
 const inputs = initializeInputs(controls, commands);
+const initialGameState = initialState(inputs);
 const gameState = createGameState(inputs);
 
 const {renderer, stage} = createStage();
@@ -22,16 +23,25 @@ const init = (stage, state) => {
 };
 
 const update = (previousState) => {
-  const {inputs, player} = previousState;
+  const {inputs, player, time} = previousState;
   const commands = inputs();
 
   let p = player;
+
   if (commands.get('up')) {
-    p = player.set('y', player.get('y') - 1);
+    p = p.set('y', p.get('y') - 1);
   };
 
   if (commands.get('down')) {
-    p = player.set('y', player.get('y') + 1);
+    p = p.set('y', p.get('y') + 1);
+  }
+
+  if (commands.get('left')) {
+    p = p.set('x', p.get('x') - 1);
+  }
+
+  if (commands.get('right')) {
+    p = p.set('x', p.get('x') + 1);
   }
 
   return previousState.set('player', p);

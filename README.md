@@ -1,9 +1,9 @@
 Loki
 ===
 
-Boilerplate for PIXI.js driven games with webpack and babel
+Boilerplate for PIXI.js driven games with webpack and babel.
 
-### Project lifecyle
+### Project lifecycle
 
 Execute following commands to run dev server, tests or build distribution:
 

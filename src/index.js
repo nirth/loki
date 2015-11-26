@@ -26,20 +26,21 @@ const update = (previousState) => {
   const commands = inputs();
 
   let p = player;
+
   if (commands.get('up')) {
-    p = player.set('y', player.get('y') - 1);
+    p = p.set('y', p.get('y') - 1);
   };
 
   if (commands.get('down')) {
-    p = player.set('y', player.get('y') + 1);
+    p = p.set('y', p.get('y') + 1);
   }
 
   if (commands.get('left')) {
-    p = player.set('x', player.get('x') - 1);
+    p = p.set('x', p.get('x') - 1);
   }
 
   if (commands.get('right')) {
-    p = player.set('x', player.get('x') + 1);
+    p = p.set('x', p.get('x') + 1);
   }
 
   return previousState.set('player', p);

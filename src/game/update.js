@@ -1,15 +1,14 @@
-import {GameState} from './state/game';
-import {PlayerState} from './state/player';
-import {TimeState} from './state/time';
+import {
+  GameState,
+  PlayerState
+} from './state';
 
-export const initialState = (inputs) => {
+export const initialGameState = (inputs) => {
   const player = new PlayerState();
-  const time = new TimeState();
 
   return new GameState({
     inputs,
     player,
-    time
   });
 };
 
@@ -18,13 +17,13 @@ export const initialState = (inputs) => {
  * It takes current state, current game time and delta as arguments and returns
  * new game state.
  *
- * @function update
+ * @function updateGameState
  * @param {GameState} state - Current game state.
  * @param {number} time - Current game time in milliseconds.
  * @param {number} delta - Current delta between current and previous frame.
  * @return {GameState} - Updated game state.
  */
-export const update = (state, time, delta) => {
+export const updateGameState = (state, time, delta) => {
 
 
   return state;

@@ -24,7 +24,7 @@ gulp.task('bdd', () => gulp
 );
 
 gulp.task('lint', () => gulp
-  .src(PATHS)
+  .src(PATHS.concat('./src/**/*.js'))
   .pipe(eslint())
   .pipe(eslint.format())
   .pipe(eslint.failOnError())

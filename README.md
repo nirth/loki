@@ -1,6 +1,6 @@
 Loki
 ===
-[![Build Status](https://travis-ci.org/nirth/loki.svg?branch=develop)](https://travis-ci.org/nirth/loki)
+[![Build Status](https://travis-ci.org/nirth/loki.svg?branch=master)](https://travis-ci.org/nirth/loki)
 [![Circle CI](https://circleci.com/gh/nirth/loki.svg?style=svg)](https://circleci.com/gh/nirth/loki)
 
 Boilerplate for PIXI.js driven games with webpack and babel.

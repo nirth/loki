@@ -1,3 +1,5 @@
+// Error prefix.
+export const ERRP = 'gameLoop: ';
 
 export const gameTime = () => {
   // TODO: This function should actually return game time.
@@ -17,17 +19,41 @@ const createEnterFrame = (gameTime, update, draw) => {
     // TODO: Implement smarter drawing, it doesn't have to happen all the time.
     draw(state);
 
-    if ('function' === typeof scheduler) {
-      scheduler(enterFrame(scheduler, state, now));
-    } else {
-      throw new Error(`enterFrame:error Missing scheduler: ${scheduler}`);
-    }
-
+    scheduler(enterFrame(scheduler, state, now));
   };
   return enterFrame;
 };
 
 export const startLoop = (scheduler, gameTime, update, draw, initialState) => {
+  if ('function' !== typeof scheduler || scheduler.length !== 1) {
+    throw new Error(
+      `${ERRP} scheduler should be function: (function) => void`);
+  }
+
+  if ('function' !== typeof gameTime || gameTime.length !== 0) {
+    throw new Error(
+      `${ERRP} gameTime should be function: () => number`
+    );
+  }
+
+  if ('function' !== typeof update || update.length !== 3) {
+    throw new Error(
+      `${ERRP} update should be a function: (state, time, delta) => object`
+    );
+  }
+
+  if ('function' !== typeof draw || draw.length !== 1) {
+    throw new Error(
+      `${ERRP} draw should be a function: (state) => void`
+    );
+  }
+
+  if ('object' !== typeof initialState || initialState === null) {
+    throw new Error(
+      `${ERRP} initialState is invalid: ${initialState}`
+    );
+  }
+
   const enterFrame = createEnterFrame(gameTime, update, draw);
   scheduler(enterFrame(scheduler, initialState, gameTime()));
   // TODO: Needs a pause functionality.

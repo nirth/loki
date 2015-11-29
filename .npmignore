@@ -6,3 +6,5 @@ gulpfile.babel.js
 .babelrc
 circle.yml
 .travis.yml
+.codeclimate.yml
+test-results.xml

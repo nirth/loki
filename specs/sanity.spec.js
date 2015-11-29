@@ -4,7 +4,9 @@ import sinonChai from 'sinon-chai';
 
 chai.use(sinonChai);
 
-// Making sure that test framework and it's plugins are in order.
+// Purpose of this spec to make sure that test framework and it's plugins
+// work and are in order (i.e. installed, don't conflict and so on).
+
 describe('Sanity should', () => {
   it('be sane', () => expect(true).to.equal(true));
   it('have spies', () => expect(spy()).to.be.a('function'));

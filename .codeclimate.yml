@@ -10,3 +10,4 @@ engines:
 exclude_paths:
   - lib/*
   - node_modules/*
+  - src/vendor/*
